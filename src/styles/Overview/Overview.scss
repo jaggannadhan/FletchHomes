@@ -1,0 +1,342 @@
+
+
+.overview {
+
+    overflow-x: hidden;
+
+    .search-bar-pos {
+        position: relative;
+        left: 7vw;
+        top: 0vw;
+        width: fit-content;
+    }
+
+    .overview-header {
+        color: black;
+        font-size: 1.2vw;
+        font-family: 'Overpass';
+        font-weight: 700;
+        overflow-wrap: break-word;
+        position: relative;
+        top: 2vw;
+        left: 7vw;
+        width: fit-content;
+        border-bottom: 0.3vw solid #465316;
+    }
+
+    .overview-opts {
+        width: 55%;
+        height: 2vw;
+        left: 5.6vw;
+        top: 4vw;
+        position: relative;
+        display: inline-flex;
+        justify-content: space-between;
+
+        .feed-opt {
+            overflow-wrap: break-word;
+            width: 5vw;
+            height: 2vw;
+            background: #9cb54a00;
+            color: black;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 400;
+            text-align: center;
+            line-height: 2vw;
+            cursor: pointer;
+        }
+
+        .view-opt {
+            width: 5vw;
+            height: 2vw;
+            border: 1px solid black;
+            color: black;
+            font-size: 1vw;
+            font-family: Overpass;
+            text-align: center;
+            line-height: 2vw;
+            cursor: pointer;
+        }
+
+        .selected {
+            background: rgba(156, 181, 74, 0);
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 9px 2px;
+            font-weight: 700;
+        }
+
+        .ppt-analysis-opt {
+            overflow-wrap: break-word;
+            width: 8vw;
+            height: 2vw;
+            background: #9cb54a00;
+            color: black;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 400;
+            text-align: center;
+            line-height: 2vw;
+            cursor: pointer;
+        }
+
+        .buy-hold-opt {
+            overflow-wrap: break-word;
+            width: 12vw;
+            height: 2vw;
+            background: #9cb54a00;
+            color: black;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 400;
+            text-align: center;
+            line-height: 2vw;
+            cursor: pointer;
+        }
+
+        .fav-opt {
+            overflow-wrap: break-word;
+            width: 6vw;
+            height: 2vw;
+            background: #9cb54a00;
+            color: black;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 400;
+            text-align: center;
+            line-height: 2vw;
+            display: inline-flex;
+            justify-content: space-between;
+            cursor: pointer;
+
+            .fav-opt-svg {
+                position: relative;
+                top: 0.2vw;
+                width: 1.5vw;
+                height: 1.5vw;
+            }
+        }
+
+        .share-opt {
+            overflow-wrap: break-word;
+            width: 5vw;
+            height: 2vw;
+            background: #9cb54a00;
+            color: black;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 400;
+            text-align: center;
+            line-height: 2vw;
+            display: inline-flex;
+            justify-content: space-between;
+            cursor: pointer;
+
+            .share-opt-svg {
+                position: relative;
+                top: 0.2vw;
+                width: 1.5vw;
+                height: 1.5vw;
+            }
+        }
+    }
+
+    .overview-img-sec {
+        width: 85%;
+        height: 42vw;
+        left: 7vw;
+        top: 6vw;
+        position: relative;
+        border-radius: 0.1vw;
+
+        .overview-img-cont1 {
+            width: 54.5vw;
+            height: 40.5vw;
+            left: 0vw;
+            top: 0vw;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .overview-img-cont2 {
+            width: 29vw;
+            height: 20vw;
+            left: 55.2vw;
+            top: 0vw;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .overview-img-cont3 {
+            width: 29vw;
+            height: 20vw;
+            left: 55.2vw;
+            top: 20.5vw;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .overview-img {
+            width: inherit;
+            height: inherit;
+        }
+
+        .browse-pics-btn {
+            width: 9vw;
+            height: 2vw;
+            left: 74vw;
+            top: 37vw;
+            position: absolute;
+            background: white;
+            text-align: center;
+            line-height: 2vw;
+            border-radius: 0.21vw;
+            font-family: 'Overpass';
+            cursor: pointer;
+        }
+    }
+
+    .ppt-det-card {
+        width: 40vw;
+        height: 26vw;
+        left: 7vw;
+        top: 8vw;
+        position: relative;
+
+        .ppt-name {
+            color: black;
+            font-size: 2.5vw;
+            font-family: Overpass;
+            font-weight: 700;
+            overflow-wrap: break-word;
+        }
+
+        .ppt-addr {
+            color: black;
+            font-size: 2vw;
+            font-family: Overpass;
+            font-weight: 300;
+            overflow-wrap: break-word;
+        }
+
+        .ppt-price {
+            color: green;
+            font-size: 2vw;
+            font-family: Overpass;
+            font-weight: 700;
+            overflow-wrap: break-word;
+        }
+
+        .ppt-price-type {
+            color: black;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 300;
+            overflow-wrap: break-word;
+        }
+
+        .ppt-det-div {
+            width: inherit;
+            height: 10vw;
+            overflow: hidden;
+
+            .ppt-addr2 {
+                color: black;
+                font-size: 1vw;
+                font-family: Overpass;
+                font-weight: 700;
+                overflow-wrap: break-word;
+            }
+
+            .ppt-det-dark {
+                color: black;
+                font-size: 1vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+            }   
+        }
+
+        .read-more {
+            color: green;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 300;
+            overflow-wrap: break-word;
+            cursor: pointer;
+        }
+
+        .ppt-det-light {
+            width: inherit;
+            height: 5vw;
+            color: #0000009c;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 300;
+            overflow-wrap: break-word;
+            overflow: hidden;
+        }
+
+        .ppt-status-btn {
+            left: 34vw;
+            top: 5vw;
+            position: absolute;
+            padding: 1vw;
+            color: white;
+            background: green;
+            font-size: 1vw;
+            font-family: Overpass;
+            font-weight: 700;
+            border-radius: 0.2vw;
+            overflow-wrap: break-word;
+            cursor: pointer;
+        }
+
+    }
+
+    .ppt-char-card {
+        width: 35.2vw;
+        position: relative;
+        top: 8vw;
+        left: 10vw;
+        border-radius: 0.5vw;
+        padding: 3vw 3vw;
+        box-shadow: #e5e5e5 0px 0px 13px 4px;
+
+        .ppt-char-items {
+            width: 65%;
+            margin-left: 15%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5vw;
+        }
+    }
+
+    .overview-quote-sec {
+        width: 100%;
+        position: relative;
+        top: 13vw;
+
+        .overview-quote {
+            text-align: center;
+            color: black;
+            font-size: 1.5vw;
+            font-family: neueRadial-C-Regular;
+            font-weight: 400;
+            overflow-wrap: break-word;
+        }
+
+        .quote-by {
+            color: black;
+            font-size: 1vw;
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: 300;
+            overflow-wrap: break-word;
+            position: relative;
+            top: 1vw;
+            left: 57vw;
+        }
+    }
+
+    
+}

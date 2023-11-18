@@ -1,0 +1,10 @@
+.properties-list {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  gap: 2vw;
+  position: relative;
+  left: 5.5vw;
+  top: 10vw;
+  overflow-x: hidden;
+}

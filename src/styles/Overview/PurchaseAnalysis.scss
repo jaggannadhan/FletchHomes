@@ -1,0 +1,199 @@
+
+
+.purchase-analysis {
+    position: relative;
+    top: 35vw;
+    left: 7vw;
+    width: 80vw;
+    height: 22vw;
+    background: white;
+    box-shadow: #0000000f 0px 4px 4px 3px;
+    border: 0.3px solid green;
+    display: inline-flex;
+    justify-content: space-between;
+
+    .pa-header {
+        left: 5px;
+        top: -4vw;
+        position: absolute;
+        color: black;
+        font-size: 1.5vw;
+        font-family: 'Overpass';
+        font-weight: 400;
+        overflow-wrap: break-word;
+    }
+
+    .pa-sec1 {
+        position: relative;
+        top: 2vw;
+        left: 4vw;
+        width: 80%;
+        height: 18vw;
+
+        .pa-sec1-divider {
+            width: 80%;
+            height: 0%;
+            border: 0.1vw solid green;
+        }
+
+        .price-div {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 90%;
+
+            .price-header {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+
+            .price-value {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+        }
+
+        .finance-div {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 90%;
+
+            .finance-header {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+
+            .finance-value {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+        }
+
+        .dp-div {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 90%;
+
+            .dp-header {
+                color: green;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+
+            .dp-value {
+                color: green;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+        }
+
+        .cop-div {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 90%;
+
+            .cop-header {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+
+            .cop-value {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+        }
+
+        .cor-div {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 90%;
+
+            .cor-header {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+
+            .cor-value {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+        }
+
+        .total-div {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 90%;
+
+            .total-header {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+
+            .total-value {
+                color: black;
+                font-size: 1.5vw;
+                font-family: Overpass;
+                font-weight: 300;
+                overflow-wrap: break-word;
+                width: 15vw;
+            }
+        }
+
+        .pa-edit {
+            width: 1.3vw;
+            height: 1.3vw;
+            position: absolute;
+            left: 75%;
+            color: green;
+            cursor: pointer;
+        }
+    }
+
+    .pa-sec2 {
+        position: relative;
+        left: 0%;
+        width: 70%;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,33 @@
+.img-container {
+    width: 92%;
+    height: 42vw;
+    padding: 2vw 2vw;
+    background: #f1f0f0;
+    font-family: Roboto;
+    overflow-x: hidden;
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    display: grid;
+    z-index: 999999;
+    border-radius: 1vw;
+
+    .top {
+        margin: 1vw;
+        .img {
+            margin: 1vw;
+
+            .img1 {
+                width: 18vw;
+                margin: 1vw;
+            }
+        }
+    }
+
+    .close {
+        position: absolute;
+        left: 97%;
+        top: 2vw;
+        cursor: pointer;
+    }
+}

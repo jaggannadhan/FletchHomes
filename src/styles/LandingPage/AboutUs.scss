@@ -1,0 +1,228 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+.about-us-section-landing {
+    width: 100%;
+    height: 75vw;
+    left: 0%;
+    top: 5vw;
+    position: relative;
+
+    .about-us-div {
+
+        .about-us-title {
+            width: fit-content;
+            color: black;
+            font-size: 2.5vw;
+            font-family: neueRadial-C-Bold;
+            font-weight: 700;
+            overflow-wrap: break-word;
+            margin: 0 auto;
+        }
+        
+        .about-us-content {
+            width: 38%;
+            height: fit-content;
+            color: black;
+            font-size: 1.4vw;
+            font-family: neueRadial-C-Book;
+            font-weight: 400;
+            overflow-wrap: break-word;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    .perk-div {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+    
+        .img-section {
+            width: 30vw;
+            height: 10vw;
+            left: 55%;
+            top: 5vw;
+            position: relative;
+
+            .img-content-div {
+        
+                .img-head {
+                    color: black;
+                    font-size: 2vw;
+                    font-family: neueRadial-C-Bold;
+                    font-weight: 700;
+                    overflow-wrap: break-word;
+                }
+                
+                .img-content {
+                    width: 27vw;
+                    height: fit-content;
+                    color: black;
+                    font-size: 1.2vw;
+                    font-family: neueRadial-C-Light;
+                    font-weight: 300;
+                    overflow-wrap: break-word;
+                }
+            }
+
+            .about-img {
+                position: relative;
+                width: 29vw;
+                height: 42vw;
+                top: 3vw;
+                border-radius: 25px;
+                box-shadow: #E9E9E6 4px -4px 16px 16px;
+            }
+            
+        }
+
+        .perks {
+            width: 16.5vw;
+            height: 18.5vw;
+            position: absolute;
+        }
+        
+        .perk-box {
+            width: inherit;
+            height: inherit;
+            left: 0%;
+            top: 0%;
+            position: absolute;
+            box-shadow: rgba(0, 0, 0, 0.05) 0vw 0.1vw 1vw;
+            border-radius: 10px;
+        }
+        
+        .ta-box {
+            background: #f5edc43b;
+        }
+        
+        .hi-box {
+            background: #e8e8e8ab;
+        }
+        
+        .s247-box {
+            background: #c4c4c424;
+        }
+        
+        .lc-box {
+            background: #c4c4c424;
+        }
+        
+        .perk-header {
+            top: 7vw;
+            text-align: center;
+            position: relative;
+            color: black;
+            font-size: 1.4vw;
+            font-family: Roboto;
+            font-weight: 500;
+            overflow-wrap: break-word;
+        }
+        
+        .perk-content {
+            width: 70%;
+            height: fit-content;
+            top: 60%;
+            position: relative;
+            text-align: center;
+            color: black;
+            font-size: 1vw;
+            font-family: neueRadial-C-Light;
+            font-weight: 300;
+            overflow-wrap: break-word;
+            margin: 0 auto;
+        }
+        
+        .hi {
+            left: 30%;
+            top: 11%;
+        }
+        
+        .s247 {
+            left: 12%;
+            top: 30%;
+        }
+        
+        .lc {
+            left: 30%;
+            top: 37%;
+        }
+        
+        .ta {
+            left: 12%;
+            top: 3%;
+        }
+
+
+        .quote-div {
+            width: inherit;
+            height: fit-content;
+            top: 50vw;
+            position: relative;
+            text-align: center;
+        }
+
+        .quote {
+            text-align: center;
+            color: black;
+            font-size: 1.5vw;
+            font-family: neueRadial-C-Regular;
+            font-weight: 400;
+            overflow-wrap: break-word;
+        }
+
+        .quote-by {
+            width: fit-content;
+            height: fit-content;
+            left: 57%;
+            top: 4vw;
+            position: absolute;
+            color: black;
+            font-size: 1vw;
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: 300;
+            overflow-wrap: break-word;
+        }
+
+    }
+
+    .svg-div {
+        left: 14.5vw;
+        top: 14vw;
+        position: absolute;
+
+
+        .tax-svg {
+            width: 4vw;
+            height: 4vw;
+            left: 4vw;
+            top: 0vw;
+            position: absolute;
+        }
+        
+        .house-svg {
+            width: 4vw;
+            height: 4vw;
+            top: 5vw;
+            left: 22vw;
+            position: absolute;
+        }
+        
+        .cost-svg {
+            width: 4vw;
+            height: 4vw;
+            left: 21.5vw;
+            top: 25vw;
+            position: absolute;
+        }
+        
+        .user-svg {
+            width: 4vw;
+            height: 4vw;
+            top: 19vw;
+            left: 4vw;
+            position: absolute;
+        }
+    }
+}

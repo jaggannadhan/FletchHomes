@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Overpass:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+.feed {
+    position: relative;
+    left: 6.6vw;
+    top: 5vw;
+
+    .header-div {
+        width: 10vw;
+        height: 2.5vw;
+    }
+
+    .highlight {
+        width: 7.6vw;
+        height: 0px;
+        left: 0.2vw;
+        top: 2.5vw;
+        position: relative;
+        border: 6px solid #465316;
+    }
+
+    .header {
+        left: 0vw;
+        top: 0vw;
+        position: absolute;
+        color: black;
+        font-size: 2vw;
+        font-family: Overpass;
+        font-weight: 700;
+        overflow-wrap: break-word;
+    }
+
+    .feed-selector {
+        width: 70vw;
+        height: 3vw;
+        left: 0vw;
+        top: 1vw;
+        position: relative;
+        display: inline-flex;
+        justify-content: space-between;
+        font-size: 1.2vw;
+
+        .selected {
+            width: 6vw;
+            height: 3vw;
+            text-align: center;
+            line-height: 3vw;
+            background: #9cb54a;
+            box-shadow: #0000001f 0px 4px 9px -2px;
+            font-family: Overpass;
+            font-weight: 700;
+            color:white;
+        }
+
+        .feed-type {
+            width: 18vw;
+            text-align: center;
+            line-height: 3vw;
+            background: #9cb54a00;
+            box-shadow: #0000001f 0px 4px 9px -2px;
+            border: 1px solid #00000033;
+            cursor: pointer;
+            font-family: Overpass;
+            font-weight: 700;
+        }
+    }
+}
