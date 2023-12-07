@@ -1,14 +1,9 @@
 
 
 .similar-properties-section {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
     position: relative;
-    top: 30vw;
+    top: 40vw;
     margin: 4vw 7vw;
-    display: inline-flex;
-    justify-content: space-between;
     width: 85%;
     height: 30vw;
 
@@ -18,5 +13,20 @@
         font-family: 'Overpass';
         font-weight: 700;
         width: 85vw;
+    }
+
+    .similar-carousel {
+        width: 114%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        display: inline-flex;
+        position: relative;
+        left: -5vw;
+    }
+
+    .preview-div {
+        margin: 1vw;
+        overflow: unset !important;
     }
 }

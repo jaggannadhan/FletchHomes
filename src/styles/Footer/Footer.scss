@@ -79,7 +79,13 @@
             font-family: Roboto;
             font-weight: 400;
             overflow-wrap: break-word;
+            text-decoration: none;
         }
+    }
+
+    .nav-elms:visited {
+        color: black;
+        text-decoration: none;
     }
 
     .content-div {

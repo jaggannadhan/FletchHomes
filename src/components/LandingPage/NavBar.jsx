@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "../../styles/LandingPage/NavBar.scss";
 import { FaHome } from 'react-icons/fa';
 
@@ -21,14 +22,19 @@ class NavBar extends Component {
                 
                 <div className="nav-bar-mid">
                     <div className="mid-elm">Home</div>
-                    <div className="mid-elm">About Us</div>
-                    <div className="mid-elm">Product</div>
-                    <div className="mid-elm">Contact Us</div>
+                    <Link className="mid-elm" to={{pathname: 'about-us/'}}>
+                        <div>About Us</div>
+                    </Link>
+                    <a href="#contact-us" className="mid-elm">Contact Us</a>
                 </div>
 
                 <div className="nav-bar-end-landing">
-                    <div className="nav-box-landing login-box-landing">Login</div>
-                    <div className="nav-box-landing signup-box-landing">Sign Up</div>
+                    <Link to={{pathname: 'login/'}}>
+                        <div className="nav-box-landing login-box-landing">Login</div>
+                    </Link>
+                    <Link to={{pathname: 'signup/'}}>
+                        <div className="nav-box-landing signup-box-landing">Sign Up</div>
+                    </Link>
                 </div>
                 
             </div>

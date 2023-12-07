@@ -1,13 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Overpass:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
+
 .preview-div {
   position: relative;
   overflow: hidden;
-  width: 25.5vw;
-  height: 33vw;
+  width: 17vw;
+  height: 22vw;
   background: white;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 7px 14px;
+  box-shadow: #0000000a 0px 7px 14px;
   border-radius: 7px;
 
   .preview-img-div {
@@ -16,20 +17,20 @@
   
   img {
     width: inherit;
-    height: 18.5vw;
+    height: 12vw;
     left: 0vw;
     top: 0vw;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.55) 0px 0px 13px 4px;
+    box-shadow: #0000008c 0px 0px 13px 4px;
     border-radius: 10px;
     cursor: pointer;
   }
 
   .preview-slider-cont {
-      width: 6vw;
-      height: 1.5vw;
-      left: 9.2vw;
-      top: 15vw;
+      width: 4vw;
+      height: 1.2vw;
+      left: 6.5vw;
+      top: 10vw;
       position: absolute;
       background: #f3e4048c;
       border-radius: 1vw;
@@ -37,9 +38,9 @@
   }
 
   .preview-slider-dots {
-      width: 0.5vw;
-      height: 0.5vw;
-      top: 15.5vw;
+      width: 0.3vw;
+      height: 0.3vw;
+      top: 10.5vw;
       position: absolute;
       background: white;
       border-radius: 9999px;
@@ -50,7 +51,7 @@
     width: 23.4vw;
     height: 13vw;
     left: 1vw;
-    top: 19vw;
+    top: 10vw;
     position: absolute;
   }
 
@@ -59,7 +60,7 @@
     top: 3vw;
     position: absolute;
     color: black;
-    font-size: 1.2vw;
+    font-size: 0.9vw;
     font-family: Overpass;
     font-weight: 400;
     overflow-wrap: break-word;
@@ -78,78 +79,78 @@
 
   .fav-svg {
     color: #f24e1e;
-    width: 2vw;
-    height: 2vw;
-    left: 19.3vw;
-    top: 2.8vw;
-    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    left: 12.2vw;
+    top: 3vw;
+    position: relative;
     font-weight: bold;
     cursor: pointer;
   }
 
   .fav-label {
-    left: 18vw;
-    top: 5vw;
-    position: absolute;
+    left: 11vw;
+    top: 3vw;
+    position: relative;
     color: black;
-    font-size: 0.8vw;
+    font-size: 0.7vw;
     font-family: Overpass;
     font-weight: 400;
     overflow-wrap: break-word;
   }
 
   .bath-svg {
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1.2vw;
+    height: 1.2vw;
     left: 0vw;
-    top: 8vw;
+    top: 6vw;
     position: absolute;
   }
 
   .bath-det {
-    left: 2vw;
-    top: 8.6vw;
+    left: 1.5vw;
+    top: 6.4vw;
     position: absolute;
     color: black;
-    font-size: 0.8vw;
+    font-size: 0.6vw;
     font-family: Overpass;
     font-weight: 400;
     overflow-wrap: break-word;
   }
 
   .bed-svg {
-    width: 1.4vw;
-    height: 1.4vw;
-    left: 9vw;
-    top: 8vw;
+    width: 1.2vw;
+    height: 1.2vw;
+    left: 6vw;
+    top: 6.1vw;
     position: absolute;
   }
 
   .bed-det {
-    left: 11vw;
-    top: 8.6vw;
+    left: 7.5vw;
+    top: 6.4vw;
     position: absolute;
     color: black;
-    font-size: 0.8vw;
+    font-size: 0.6vw;
     font-family: Overpass;
     font-weight: 400;
     overflow-wrap: break-word;
   }
 
   .area-svg {
-    width: 1.4vw;
-    height: 1.4vw;
-    left: 16.5vw;
-    top: 8vw;
+    width: 1.1vw;
+    height: 1.1vw;
+    left: 10.5vw;
+    top: 6vw;
     position: absolute;
   }
 
   .area-det {
-    left: 18.5vw;
-    top: 8.6vw;
+    left: 12vw;
+    top: 6.4vw;
     position: absolute;
     color: black;
-    font-size: 0.8vw;
+    font-size: 0.6vw;
     font-family: Overpass;
     font-weight: 400;
     overflow-wrap: break-word;
@@ -157,11 +158,11 @@
 
   .price-det {
     left: 0vw;
-    top: 11vw;
+    top: 9vw;
     position: absolute;
     color: #127e00;
-    font-size: 1.3vw;
-    font-family: neueRadial-C-Bold;
+    font-size: 1.2vw;
+    font-family: Overpass;
     font-weight: 700;
     overflow-wrap: break-word;
   }
@@ -169,23 +170,18 @@
   .view-det-div {
     width: 6vw;
     height: 1.6vw;
-    left: 17vw;
-    top: 10.7vw;
+    left: 9vw;
+    top: 9vw;
     position: absolute;
     background: green;
     border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .view-det-inner {
-    left: 17.8vw;
-    top: 11vw;
-    position: absolute;
     color: white;
     font-size: 0.8vw;
-    font-family: neueRadial-C-Bold;
+    font-family: Overpass;
     font-weight: 500;
     overflow-wrap: break-word;
+    text-align: center;
+    line-height: 1.7vw;
     cursor: pointer;
   }
 }

@@ -1,68 +1,103 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/Overview/Calculator.scss";
-import { calculateMortgage, calculateCashFlow } from "../../Apis/apis.js";
-import { format_price } from "../../Helper/helper";
+
+import { format_price } from "../../Helper/helper.js";
 import CalcBrkDwnChart from "./CalcBrkDwnChart.jsx";
 
 export default function Calculator(props) {
     const { details, property_id } = {...props};
-    const { mortgage, hoa, list_price } = {...details};
+    const {
+        list_price,
+        property_tax_rate,
+        down_payment, 
+        loan_amount, 
+        rate,
+        home_ins,
+        term,
+        hoa_fee,
+        monthly_payment
+    } = unpackDetails(details);
 
-    const { estimate, property_tax_rate: ptr } = { ...mortgage };
-    const { down_payment, loan_amount, average_rate, monthly_payment_details } = {...estimate} ;
-    const { loan_type, rate } = {...average_rate};
-    const { amount: home_ins } = {...monthly_payment_details?.[1]};
-    const [ finance, setFinance ] = useState(estimate || {});
-    const { term } = {...loan_type};
-    const { fee: hoa_fee} = {...hoa};
 
-    const [ isLoading, setIsLoading ] = useState(false);
-    const [ isCashFlowLoading, setIsCashFlowLoading ] = useState(false);
-    const [ cashFlow, setCashFlow ] = useState({});
-    const [ dwnPymtSliderVal, setDwnPymtSliderVal ] = useState(10);
+    const [ dwnPymtSliderVal, setDwnPymtSliderVal ] = useState(down_payment);
+    const [ irSliderVal, setIrSliderVal ] = useState(rate);
+    const [ insSliderVal, setInsSliderVal ] = useState(home_ins);
+    const [ pptSliderVal, setPptSliderVal ] = useState(property_tax_rate);
+    const [ hodSliderVal, setHodSliderVal ] = useState(hoa_fee);
 
 
     useEffect(() => {
         const allParamsPresent =  () => {
-            if(home_ins && ptr && down_payment && loan_amount && term && rate && hoa_fee != undefined) return true;
+            if(  down_payment && hoa_fee != undefined && home_ins &&  loan_amount && property_tax_rate && term && rate) return true;
             return false;
         }
-        const getCaluclatorDetails = async () => {
-            if(!isLoading && allParamsPresent()) {
-                setIsLoading(true);
-                calculateMortgage(
-                    home_ins, 
-                    ptr, 
-                    down_payment, 
-                    loan_amount, 
-                    loan_type?.term, 
-                    rate, 
-                    hoa?.fee
-                ).then((res) => { 
-                    setFinance(res?.data?.loan_mortgage || estimate || {});
-                    setIsLoading(false);
-                });
-            }
-        }
 
-        const getCashFlow = async () => {
-            if(!isCashFlowLoading) {
-                setIsCashFlowLoading(true);
-                calculateCashFlow(property_id).then((res) => { 
-                    setCashFlow(res?.data?.loan_mortgage || {});
-                    setIsCashFlowLoading(false);
-                });
-            }
+        if(allParamsPresent()) {
+            setDwnPymtSliderVal(down_payment);
+            setIrSliderVal(rate);
+            setInsSliderVal(home_ins);
+            setPptSliderVal(property_tax_rate)
+            setHodSliderVal(hoa_fee);
         }
-
-        getCaluclatorDetails();
-        getCashFlow();
         
-    }, [property_id, home_ins, ptr, down_payment, loan_amount, rate]);
+    }, [property_id, home_ins, property_tax_rate, down_payment, loan_amount, rate]);
 
-
-    const { monthly_payment_details: monthly_pd } = {...finance};
-    const [pi, hoa_fees, mortgage_ins, ppt_tax, calc_home_ins] = [...monthly_pd||[]];
+    function setCalculator() {
+        let body = {
+            "financing": {
+                "firstMtgAmortizationPeriod": 30,
+                "firstMtgCMHCFee": 0,
+                "firstMtgInterestRate": 8,
+                "firstMtgPrincipleAmount": 355300.0,
+                "secondMtgAmortizationPeriod": 9999,
+                "secondMtgInterestRate": 12,
+                "secondMtgPrincipleAmount": 0
+            },
+            "incomeInfo": {
+                "grossRents": 58800,
+                "laundry": 0,
+                "other": 0,
+                "parking": 0,
+                "storage": 0
+            },
+            "operating": {
+                "accounting": 0,
+                "associationFees": 0,
+                "badDebts": 0,
+                "cable": 1200,
+                "capitalImprovements": 0,
+                "caretaking": 2880,
+                "commonAreaMaintenance": 0,
+                "electricity": 0,
+                "gas": 0,
+                "lawn": 0,
+                "legal": 0,
+                "miscellaneous": 0,
+                "other": 0,
+                "repairsRate": 5,
+                "trashRemoval": 0,
+                "water": 1200
+            },
+            "propertyInfo": {
+                "advertizingCost": 100,
+                "annualAppreciationRate": 3,
+                "managementRate": 5,
+                "vacancyRate": 5
+            },
+            "purchaseInfo": {
+                "appraisals": 700,
+                "brokerFee": 5000,
+                "environmentals": 0,
+                "inspections": 700,
+                "legal": 500,
+                "lenderFee": 1500,
+                "misc": 500,
+                "repairs": 5000,
+                "repairsContingency": 1000,
+                "transferTax": 0
+            }
+        }
+    }
 
     return (
         <div className="calculator">
@@ -76,7 +111,7 @@ export default function Calculator(props) {
 
                 <div className="estd-cost">Estimated Cost</div>
                 <div className="estd-cost-val-div">
-                    <span className="estd-cost-val">{format_price(finance.monthly_payment)}</span>
+                    <span className="estd-cost-val">{format_price(monthly_payment)}</span>
                     <span className="estd-cost-time">per month</span>
                 </div>
 
@@ -84,17 +119,17 @@ export default function Calculator(props) {
 
                     <div className="indv-payment-det"> 
                         <div>Loan amount</div> 
-                        <div>{format_price(finance.loan_amount)}</div>
+                        <div>{format_price(loan_amount)}</div>
                     </div>
 
                     <div className="indv-payment-det">
                         <div>Down payment</div>
-                        <div>{format_price(down_payment)}</div>
+                        <div>{format_price(dwnPymtSliderVal)}</div>
                     </div>
 
                     <div className="indv-payment-det">
                         <div>Interest rate</div>
-                        <div>{rate?.toFixed(2)}%</div>
+                        <div>{Number(irSliderVal)?.toFixed(2)}%</div>
                     </div>
 
                     <div className="indv-payment-det">
@@ -104,18 +139,18 @@ export default function Calculator(props) {
 
                     <div className="indv-payment-det">
                         <div>Property tax</div>
-                        <div>{ptr} / year</div>
+                        <div>{pptSliderVal} / year</div>
                     </div>
                     
                     <div className="indv-payment-det">
                         <div>Homeowner Ins.</div>
-                        <div>{home_ins} /  year</div>
+                        <div>{insSliderVal} /  year</div>
                     </div>
 
                     
                     <div className="indv-payment-det">
                         <div>Hoa dues</div>
-                        <div>{format_price(hoa_fee)} / month
+                        <div>{format_price(hodSliderVal)} / month
                         </div>
                     </div>
                 </div>
@@ -124,39 +159,11 @@ export default function Calculator(props) {
 
                 <div className="pie-chart">
                     <CalcBrkDwnChart 
-                        home_ins={home_ins}
-                        ppt_tax={ppt_tax?.amount}
-                        pi={pi?.amount}
+                        home_ins={Number(insSliderVal)}
+                        ppt_tax={Number(pptSliderVal)*list_price}
+                        pi={Number(dwnPymtSliderVal)}
                     />
                 </div>
-
-                {/* <div className="pie-chart-brkdwn">
-
-                    <div className="chart-brkdwn-grid">
-                        <div className="chart-brkdwn-head">
-                            <div className="brkdwn-dots"/>
-                            <div className="brkdwn-val-btm">Insurance</div>
-                        </div>
-                        <div className="brkdwn-val-btm">{format_price(home_ins)}</div>
-                    </div>
-                    
-                    <div className="chart-brkdwn-grid">
-                        <div className="chart-brkdwn-head">
-                            <div className="brkdwn-dots"/>
-                            <div className="brkdwn-val-btm">Tax</div>
-                        </div>
-                        <div className="brkdwn-val-btm">{format_price(ppt_tax?.amount)}</div>
-                    </div>
-
-                    <div className="chart-brkdwn-grid">
-                        <div className="chart-brkdwn-head">
-                            <div className="brkdwn-dots"/>
-                            <div className="brkdwn-val-btm">P&I</div>
-                        </div>
-                        <div className="brkdwn-val-btm">{format_price(pi?.amount)}</div>
-                    </div>
-                </div> */}
-
             </div>
 
             <div className="calculator-view">
@@ -186,16 +193,15 @@ export default function Calculator(props) {
 
                         <div className="slider-div">
                             <div className="slider-elm">
-                                <input type="range" min="1" max="100" value={dwnPymtSliderVal} className="slider"
-                                    onChange={(e) => setDwnPymtSliderVal(e.value)}
+                                <input type="range" min={`${list_price/10}`} max={`${list_price}`} value={dwnPymtSliderVal} className="slider"
+                                    onChange={(e) => setDwnPymtSliderVal(e.currentTarget?.value)}
                                 />
-                                {/* <div className="highlighter"/>
-                                <div className="pos"/> */}
+
                             </div>
  
                             <div className="hover-div">
-                                <div className="det1">{(down_payment/list_price) * 100}%</div>
-                                <div className="det2">{format_price(down_payment)}</div>
+                                <div className="det1">{Math.round(dwnPymtSliderVal/list_price + "e+2")}%</div>
+                                <div className="det2">{format_price(dwnPymtSliderVal)}</div>
                             </div>
                         </div>
 
@@ -214,13 +220,13 @@ export default function Calculator(props) {
                     
                         <div className="slider-div">
                             <div className="slider-elm">
-                                <div className="slider"/>
-                                <div className="highlighter"/>
-                                <div className="pos"/>
+                                <input type="range" min="0" max="20" value={irSliderVal} className="slider" step="0.01"
+                                    onChange={(e) => setIrSliderVal(e.currentTarget?.value)}
+                                />
                             </div>
 
                             <div className="hover-div">
-                                <div className="details">{rate?.toFixed(2)}%</div>
+                                <div className="details">{Number(irSliderVal)?.toFixed(2)}%</div>
                             </div>
                         </div>
 
@@ -239,14 +245,14 @@ export default function Calculator(props) {
 
                         <div className="slider-div">
                             <div className="slider-elm">
-                                <div className="slider"/>
-                                <div className="highlighter"/>
-                                <div className="pos"/>
+                                <input type="range" min="0" max="3" value={pptSliderVal} className="slider" step="0.01"
+                                    onChange={(e) => setPptSliderVal(e.currentTarget?.value)}
+                                />
                             </div>
 
                             <div className="hover-div">
-                                <div className="det1">{ptr}%</div>
-                                <div className="det2">{ppt_tax ? format_price(ppt_tax?.amount*12) : "--"}</div>
+                                <div className="det1">{pptSliderVal}%</div>
+                                <div className="det2">{format_price(pptSliderVal*list_price)}</div>
                             </div>
                             
                         </div>
@@ -264,13 +270,13 @@ export default function Calculator(props) {
                         
                         <div className="slider-div">
                             <div className="slider-elm">
-                                <div className="slider"/>
-                                <div className="highlighter"/>
-                                <div className="pos"/>
+                                <input type="range" min="0" max="1000" value={insSliderVal} className="slider"
+                                    onChange={(e) => setInsSliderVal(e.currentTarget?.value)}
+                                />
                             </div>
 
                             <div className="hover-div">
-                                <div className="details">{calc_home_ins ? format_price(calc_home_ins?.amount) : "--"}</div>
+                                <div className="details">{format_price(insSliderVal)}</div>
                             </div>
                         </div>
 
@@ -287,8 +293,9 @@ export default function Calculator(props) {
                         
                         <div className="slider-div">
                             <div className="slider-elm">
-                                <div className="slider"/>
-                                <div className="pos"/>
+                                <input type="range" min="0" max="1000" value={hodSliderVal} className="slider"
+                                    onChange={(e) => setHodSliderVal(e.currentTarget?.value)}
+                                />
                             </div>
                         </div>
 
@@ -299,7 +306,9 @@ export default function Calculator(props) {
                     </div>
                 </div>
                 
-                <button className="calc-btns save-btn">
+                <button className="calc-btns save-btn"
+                 onClick={() => setCalculator()}
+                >
                     Save Report
                 </button>
                 <button className="calc-btns view-btn">
@@ -309,4 +318,33 @@ export default function Calculator(props) {
         
         </div>
     );
+}
+
+const unpackDetails = (details) => {
+    const { mortgage, hoa, list_price } = {...details};
+
+    const { estimate, property_tax_rate } = { ...mortgage };
+    const { down_payment, loan_amount, average_rate, monthly_payment_details, monthly_payment } = {...estimate} ;
+    const { loan_type, rate } = {...average_rate};
+    const { amount: home_ins } = {...monthly_payment_details?.[1]};
+    const { term } = {...loan_type};
+    const { fee: hoa_fee} = {...hoa};
+
+    return {
+        mortgage, 
+        hoa, 
+        list_price,
+        estimate,
+        property_tax_rate,
+        down_payment, 
+        loan_amount, 
+        average_rate, 
+        monthly_payment,
+        monthly_payment_details,
+        loan_type, 
+        rate,
+        home_ins,
+        term,
+        hoa_fee
+    };
 }

@@ -5,9 +5,9 @@ export default function CalcBrkDwnChart(props) {
 
     const data = [
         ["Type", "Amount"],
-        ["Insurance", props.home_ins || 42],
-        ["Tax", props.ppt_tax || 30],
-        ["P&I", props.pi || 28]
+        ["Insurance", props.home_ins*12],
+        ["Tax", props.ppt_tax],
+        ["P&I", props.pi]
     ];
       
     const options = {
@@ -19,6 +19,7 @@ export default function CalcBrkDwnChart(props) {
         charArea: {width: 400, height: 100},
         pieSliceTextStyle: {color: "white", fontSize: 10}
     };
+
     return (
         <Chart
             chartType="PieChart"

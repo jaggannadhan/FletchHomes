@@ -68,9 +68,10 @@
         top: 5vw;
         position: absolute;
         color: black;
-        font-size: 0.95vw;
+        font-size: 1vw;
         font-weight: 400;
         word-wrap: break-word;
+        font-family: 'Overpass';
 
         .mid-elm {
             cursor: pointer;
@@ -78,13 +79,12 @@
     }
 
     .nav-bar-end {
-        display: inline-flex;
-        justify-content: space-between;
-        width: 4.5vw;
-        left: 87%;
+        display: flex;
+        width: 20vw;
+        left: 80%;
         top: 5vw;
         position: absolute;
-    
+
         .profile-name {
             color: black;
             font-size: 1vw;
@@ -98,6 +98,7 @@
             width: 1.25vw;
             height: 1.25vw;
             cursor: pointer;
+            margin-left: 1vw;
         }
     }
 

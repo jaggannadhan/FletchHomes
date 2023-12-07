@@ -50,12 +50,12 @@
 }
 
 .dot1 {
-    left: 0.5vw;
+    left: 0.61vw;
     background: rgb(22, 78, 161);
 }
 
 .dot2 {
-    left: 0.7vw;
+    left: 0.769vw;
     background: rgb(21, 153, 0);
 }
 
@@ -68,13 +68,20 @@
     top: 5vw;
     position: absolute;
     color: black;
-    font-size: 0.95vw;
-    font-weight: 400;
+    font-size: 1vw;
+    font-weight: 450;
     word-wrap: break-word;
+    text-decoration: none !important;
+    font-family: 'Overpass';
 }
 
 .mid-elm {
     cursor: pointer;
+    text-decoration: none !important;
+}
+a:visited {
+    text-decoration: none !important;
+    color: black;
 }
 
 .nav-box {
@@ -104,10 +111,9 @@
 }
 
 .nav-bar-end {
-    display: inline-flex;
-    justify-content: space-between;
-    width: 4.5vw;
-    left: 87%;
+    display: flex;
+    width: 20vw;
+    left: 80%;
     top: 5vw;
     position: absolute;
 
@@ -124,6 +130,7 @@
         width: 1.25vw;
         height: 1.25vw;
         cursor: pointer;
+        margin-left: 1vw;
     }
 }
 

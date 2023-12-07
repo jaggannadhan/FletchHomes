@@ -2,24 +2,30 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/Overview/Overview.scss";
 
-import NavBar from "./NavBar.jsx";
+import NavBar from "../NavBar/NavBar.jsx";
 import Calculator from "./Calculator.jsx";
 import CheckBackBanner from "./CheckBackBanner.jsx";
-import Footer from "./Footer.jsx";
+import Footer from "../Footer/Footer.jsx";
 import SimilarProperties from "./SimilarProperties.jsx";
 import SearchBar from "../SearchBar/SearchBar.jsx";
-import PurchaseAnalysis from "./PurchaseAnalysis.jsx";
 import ImageGallery from "./ImageGallery.jsx";
+import { Link } from "react-router-dom";
 
 import { BsHeart, BsHeartFill, BsShareFill } from "react-icons/bs";
 import { AiFillPieChart } from "react-icons/ai";
-import { getPropertyDetails } from "../../Apis/apis.js";
-import { format_price } from "../../Helper/helper.js";
+import { getPropertyDetails, calculateMortgage } from "../../Apis/apis.js";
+import { format_price, getBetterImages, getCookie } from "../../Helper/helper.js";
+import PropertyAnalysis from "./PropertyAnalysis.jsx";
 
 export default function Overview(props) {
     const { property_id } = useParams();
-    const [ isLoading, setIsLoading ] = useState(false);
+    const [ isDetailsLoading, setIsDetailsLoading ] = useState(false);
     const [ details, setDetails ] = useState({});
+    const [ loggedInUser, setLoggedInUser ] = useState("");
+
+    const [ calcDetails, setCalcDetails ] = useState({});
+    const [ isCalcLoading, setIsCalcLoading ] = useState(false);
+    
     const [ showGallery, setShowGallery ] = useState(false);
     const { 
         list_price, 
@@ -36,54 +42,73 @@ export default function Overview(props) {
     const { text, lot_sqft, year_built, type } = { ...details?.description || {}};
 
     useEffect(() => {
-        if(!isLoading) {
-            setIsLoading(true);
+        const user = getCookie("user");
+        if(user) setLoggedInUser(user);
+
+        if(!isDetailsLoading) {
+            setIsDetailsLoading(true);
             getPropertyDetails(property_id).then((res) => { 
-                setDetails(res?.data?.home || res?.listing || {});
-                setIsLoading(false);
+                setDetails(res?.data?.home || {});
+                setIsDetailsLoading(false);
             });
         }
+
+        const getCaluclatorDetails = async (_id) => {
+            if(!isCalcLoading) {
+                setIsCalcLoading(true);
+                calculateMortgage(_id).then((res) => { 
+                    setCalcDetails(res || {});
+                    setIsCalcLoading(false);
+                });
+            }
+        }
+
+        getCaluclatorDetails(property_id);
     }, [property_id]);
 
     const [ isFavourite, setIsFavourite ] = useState(false);
 
     return (
         <div className="overview">
-            <NavBar />
-            <div className="search-bar-pos"> <SearchBar/> </div>
+            <NavBar loggedInUser={loggedInUser}/>
+            {/* <div className="search-bar-pos"> <SearchBar/> </div> */}
             <div className="overview-header">Property Overview</div>
 
             <div className="overview-opts">
-                <div className="feed-opt">Feed</div>
-                <div className="view-opt selected">Overview</div>
-                <div className="ppt-analysis-opt">Property Analysis</div>
-                <div className="buy-hold-opt">Buy & Hold Projections</div>
 
-                <div className="fav-opt">
+                <Link className="feed-opt ovrvw-opt-elms" to={{pathname: '../home'}} state={{scrollToFeed: true}}>Feed</Link>
+                <div className="view-opt ovrvw-opt-elms selected">Overview</div>
+                <a className="ppt-analysis-opt ovrvw-opt-elms" href="#property-analysis">
+                        Property Analysis
+                </a>
+
+                <div className="fav-opt ovrvw-opt-elms" onClick={() => setIsFavourite(!isFavourite)}>
                     {
                         isFavourite ? 
-                        <BsHeartFill className="fav-opt-svg" style={{color:"red"}} onClick={() => setIsFavourite(false)}/> : 
-                        <BsHeart className="fav-opt-svg" onClick={() => setIsFavourite(true)}/>
+                        <BsHeartFill className="fav-opt-svg" style={{color:"red"}} /> : 
+                        <BsHeart className="fav-opt-svg"/>
                     }
-                    <div>Favorite</div>
+                    <div className="opt-inner">Favorite</div>
                 </div> 
-                <div className="share-opt">
+                <a className="share-opt ovrvw-opt-elms" target="_blank"
+                    href={`mailto:?subject=I wanted you to see this site&amp;body=Hey, check out this investment ${window.location.href}`}
+                >
                     <BsShareFill className="share-opt-svg"/>
-                    <div>Share</div>
-                </div>
+                    <div className="opt-inner">Share</div>
+                </a>
             </div>
 
             <section className="overview-img-sec">
                 <div className="overview-img-cont1">
-                    <img className="overview-img"src={photos?.[0]?.href} />
+                    <img className="overview-img"src={getBetterImages(photos?.[0]?.href)} />
                 </div>
                 
                 <div className="overview-img-cont2">
-                    <img className="overview-img" src={photos?.[1]?.href} />
+                    <img className="overview-img" src={getBetterImages(photos?.[1]?.href)} />
                 </div>
                 
                 <div className="overview-img-cont3">
-                    <img className="overview-img" src={photos?.[2]?.href} />
+                    <img className="overview-img" src={getBetterImages(photos?.[2]?.href)} />
                 </div>
                 
                 <div className="browse-pics-btn" onClick={() => 
@@ -97,7 +122,11 @@ export default function Overview(props) {
             </section>
 
             {
-                showGallery ? <ImageGallery setShowGallery={setShowGallery} /> : ""
+                showGallery ? 
+                <ImageGallery 
+                    setShowGallery={setShowGallery} 
+                    photos={photos}
+                /> : ""
             }
 
             <div style={{display: 'inline-flex', justifyContent: 'space-between'}}>
@@ -174,43 +203,27 @@ export default function Overview(props) {
                 <div style={{color: 'black', fontSize: 20, fontFamily: 'Overpass', fontWeight: '400', wordWrap: 'break-word'}}>This page shows the purchase breakdown, cash flow and investment returns for this property.</div>
             </div>
 
-            <div style={{display: "inline-flex", width: "80%", position: "relative",  top:"25vw", left: "7vw", justifyContent: "space-between"}}>
-                <div style={{width: '14vw', height: '4vw', textAlign: "center", lineHeight: "2vw", background: 'white', border: '0.50px #127E00 solid'}}>
-                    <div style={{opacity: 0.64, color: 'black', fontSize: 20, fontFamily: 'neueRadial-C-Regular', fontWeight: '400', wordWrap: 'break-word'}}>CASH NEEDED</div>
-                    <div style={{color: '#127E00', fontSize: 25, fontFamily: 'neueRadial-C-Bold', fontWeight: '700', wordWrap: 'break-word'}}>$20,000</div>
-                </div>
+            
 
-                <div style={{width: '14vw', height: '4vw', textAlign: "center", lineHeight: "2vw", background: 'white', border: '0.50px #127E00 solid'}}>
-                    <div style={{opacity: 0.64, color: 'black', fontSize: 20, fontFamily: 'neueRadial-C-Regular', fontWeight: '400', wordWrap: 'break-word'}}>CASH Flow</div>
-                    <div style={{color: '#127E00', fontSize: 25, fontFamily: 'neueRadial-C-Bold', fontWeight: '700', wordWrap: 'break-word'}}>$209/mo</div>
-                </div>
-
-                <div style={{width: '14vw', height: '4vw', textAlign: "center", lineHeight: "2vw", background: 'white', border: '0.50px #127E00 solid'}}>
-                    <div style={{opacity: 0.64, color: 'black', fontSize: 20, fontFamily: 'neueRadial-C-Regular', fontWeight: '400', wordWrap: 'break-word'}}>CAP RATE</div>
-                    <div style={{color: '#127E00', fontSize: 25, fontFamily: 'neueRadial-C-Bold', fontWeight: '700', wordWrap: 'break-word'}}>7.2%</div>
-                </div>
-
-                <div style={{width: '14vw', height: '4vw', textAlign: "center", lineHeight: "2vw", background: 'white', border: '0.50px #127E00 solid'}}>
-                    <div style={{opacity: 0.64, color: 'black', fontSize: 20, fontFamily: 'neueRadial-C-Regular', fontWeight: '400', wordWrap: 'break-word'}}>COC</div>
-                    <div style={{color: '#127E00', fontSize: 25, fontFamily: 'neueRadial-C-Bold', fontWeight: '700', wordWrap: 'break-word'}}>8.6%</div>
-                </div>
-            </div>
-
-            <PurchaseAnalysis 
+            <PropertyAnalysis 
+                property_id={property_id}
                 list_price={list_price}
+                details={details} 
                 mortgage={mortgage}
+                calcDetails={calcDetails}
             />
             
             <Calculator 
                 property_id={property_id}
                 details={details} 
+                calcDetails={calcDetails}
             /> 
             
             <SimilarProperties 
                 property_id={property_id}
             />
             <CheckBackBanner />
-            <Footer />
+            <Footer overView={true}/>
         </div>
     );
 }

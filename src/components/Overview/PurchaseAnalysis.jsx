@@ -6,10 +6,10 @@ import { format_price } from "../../Helper/helper";
 import PurchaseAnalysisChart from "./PurchaseAnalysisChart.jsx";
 
 export default function PurchaseAnalysis(props) {
-    const { mortgage, list_price } = { ...props };
+    const { mortgage, list_price, calcDetails } = { ...props };
     const { estimate } = {...mortgage};
     const { down_payment, loan_amount, total_payment } = {...estimate};
-
+    
     return (
         <section className="purchase-analysis">
             <div className="pa-header">Purchase Analysis</div>

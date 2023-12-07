@@ -1,0 +1,34 @@
+.info-banner {
+    width: 100%;
+    height: fit-content;
+    background: #1976d2;
+    display: inline-flex;
+    justify-content: space-between;
+    user-select: none;
+
+    .message {
+        width: 90%;
+        color: white;
+        text-align: center;
+        line-height: 2vw;
+        margin: 0 auto;
+        user-select: none;
+    }
+
+    .close-banner-icon {
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 0.5vw;
+        margin-right: 1vw;
+        cursor: pointer;
+    }
+}
+
+.error {
+    background: red;
+}
+
+.close {
+    display: none !important;
+}

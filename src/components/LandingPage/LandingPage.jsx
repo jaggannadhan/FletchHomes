@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Footer from "./Footer.jsx";
+import Footer from "../Footer/Footer.jsx";
 import ContactUs from "./ContactUs.jsx";
 import SearchOrSignup from "./SearchOrSignUp.jsx";
 import Calculator from "./Calculator.jsx";

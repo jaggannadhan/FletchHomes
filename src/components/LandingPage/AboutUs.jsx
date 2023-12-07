@@ -8,7 +8,7 @@ class AboutUs extends Component {
             <div className="about-us-section-landing">
 
                 <div className="about-us-div">
-                    <div className="about-us-title">About Us</div>
+                    <div className="about-us-title">What We Do</div>
                     <div className="about-us-content">
                         We seek to develop a personal real estate app that simplifies investing, making it easy for people to buy and sell their properties at the right time!
                         Our goal is to help you maximize profit and achieve your financial goals through Fletch. 
@@ -21,7 +21,7 @@ class AboutUs extends Component {
                             <div className="img-head">
                                 Why Choose Us, 
                                 <br/>
-                                For Your Dream House?
+                                For Your Investments?
                             </div>
                             <div className="img-content">
                                 Because our AI combines the knowledge of thousands of successfull investors!
@@ -35,19 +35,19 @@ class AboutUs extends Component {
                     <div className="perks ta">
                         <div className="perk-box ta-box" />
                         <div className="perk-header">
-                            Tax Advantage
+                            Cash Flow
                         </div>
                         <div className="perk-content">
-                            Morbi viverra commodo porta.Morbi viverra.
+                            We suggest those investments that generate a positive cash flow, providing the investor with a surplus of funds.
                         </div>
                     </div>
                     <div className="perks hi">
                         <div className="perk-box hi-box" />
                         <div className="perk-header">
-                            House Insurance
+                            Precise Forecast
                         </div>
                         <div className="perk-content" >
-                            Morbi viverra commodo porta.Morbi viverra.
+                            Our Machine Learning algorithms analyze patterns, trends and incorporate numerous variables to enhance forecasting accuracy.
                         </div>
                     </div>
                     <div className="perks s247">
@@ -56,16 +56,16 @@ class AboutUs extends Component {
                             24/7 Support
                         </div>
                         <div className="perk-content">
-                            Morbi viverra commodo porta.Morbi viverra.
+                            We are here to guide you in every step of your lucrative journey and beyond.
                         </div>
                     </div>
                     <div className="perks lc">
                         <div className="perk-box lc-box" />
                         <div className="perk-header">
-                            Low Cost
+                            Return On Investment
                         </div>
                         <div className="perk-content">
-                            Morbi viverra commodo porta.Morbi viverra.
+                            We diligently factor variables like appreciation, financing, vacancy rates, maintenance along with fluctuations in the market.
                         </div>
                     </div>
 

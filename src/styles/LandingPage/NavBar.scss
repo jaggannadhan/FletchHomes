@@ -68,9 +68,10 @@
     top: 5vw;
     position: absolute;
     color: black;
-    font-size: 0.95vw;
+    font-size: 1vw;
     font-weight: 400;
     word-wrap: break-word;
+    font-family: 'Overpass';
 }
 
 .mid-elm {
@@ -104,9 +105,8 @@
 }
 
 .nav-bar-end-landing {
-    display: inline-flex;
-    justify-content: space-between;
-    width: 12vw;
+    display: flex;
+    width: 20vw;
     left: 80%;
     top: 5vw;
     position: absolute;

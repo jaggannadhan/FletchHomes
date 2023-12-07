@@ -49,9 +49,9 @@
 
     .img-div {
         width: 27vw;
-        height: 44vw;
+        height: 43vw;
         left: 56vw;
-        top: 20vw;
+        top: 18vw;
         position: absolute;
         overflow: hidden;
         border-radius: 2vw;
@@ -79,7 +79,7 @@
 
     .header-div {
         left: 6.5vw;
-        top: -1vw;
+        top: 0vw;
         position: relative;
         color: black;
         font-size: 1.2vw;
@@ -89,8 +89,9 @@
     }
 
     .value-div {
-        left: 6.5vw;
-        top: -1vw;
+        width: 15vw;
+        left: 2vw;
+        top: 1vw;
         position: relative;
         color: #00000085;
         font-size: 1.1vw;
@@ -117,7 +118,7 @@
 
     .contact-div {
         width: 19vw;
-        height: 16vw;
+        height: 12vw;
         position: absolute;
         border-radius: 9px;
         border: 3px solid #e7e7e7;

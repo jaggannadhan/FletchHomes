@@ -27,116 +27,136 @@
     .overview-opts {
         width: 55%;
         height: 2vw;
-        left: 5.6vw;
+        left: 7vw;
         top: 4vw;
         position: relative;
         display: inline-flex;
-        justify-content: space-between;
+        margin-right: 1vw;
+        // justify-content: space-between;
+
+        .ovrvw-opt-elms {
+            margin-right: 1vw;
+            box-shadow: #0000001f 0px 4px 9px 2px;
+            border-radius: 5%;
+            height: 2.5vw;
+            line-height: 2.5vw;
+            user-select: none; 
+        }
 
         .feed-opt {
             overflow-wrap: break-word;
             width: 5vw;
-            height: 2vw;
             background: #9cb54a00;
             color: black;
             font-size: 1vw;
             font-family: Overpass;
             font-weight: 400;
             text-align: center;
-            line-height: 2vw;
             cursor: pointer;
+            text-decoration: none;
+        }
+
+        .feed-opt:visited {
+            color: black;
+            text-decoration: none;
         }
 
         .view-opt {
             width: 5vw;
-            height: 2vw;
             border: 1px solid black;
             color: black;
             font-size: 1vw;
             font-family: Overpass;
             text-align: center;
-            line-height: 2vw;
             cursor: pointer;
         }
 
         .selected {
-            background: rgba(156, 181, 74, 0);
-            box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 9px 2px;
+            background: #465315;
+            box-shadow: #465315 0px 4px 9px 2px;
             font-weight: 700;
+            color: white;
         }
 
         .ppt-analysis-opt {
             overflow-wrap: break-word;
-            width: 8vw;
-            height: 2vw;
+            width: 10vw;
             background: #9cb54a00;
             color: black;
             font-size: 1vw;
             font-family: Overpass;
             font-weight: 400;
             text-align: center;
-            line-height: 2vw;
             cursor: pointer;
+            text-decoration: none;
+        }
+
+        .ppt-analysis-opt:hover {
+            color:black;
+            text-decoration: none;
         }
 
         .buy-hold-opt {
             overflow-wrap: break-word;
             width: 12vw;
-            height: 2vw;
             background: #9cb54a00;
             color: black;
             font-size: 1vw;
             font-family: Overpass;
             font-weight: 400;
             text-align: center;
-            line-height: 2vw;
             cursor: pointer;
         }
 
         .fav-opt {
             overflow-wrap: break-word;
-            width: 6vw;
-            height: 2vw;
+            width: 7vw;
             background: #9cb54a00;
             color: black;
             font-size: 1vw;
             font-family: Overpass;
             font-weight: 400;
             text-align: center;
-            line-height: 2vw;
             display: inline-flex;
-            justify-content: space-between;
             cursor: pointer;
 
             .fav-opt-svg {
                 position: relative;
-                top: 0.2vw;
-                width: 1.5vw;
-                height: 1.5vw;
+                top: 0.5vw;
+                width: 1.4vw;
+                height: 1.4vw;
+                margin-left: 0.8vw;
             }
         }
 
         .share-opt {
             overflow-wrap: break-word;
-            width: 5vw;
-            height: 2vw;
+            width: 7vw;
             background: #9cb54a00;
             color: black;
             font-size: 1vw;
             font-family: Overpass;
             font-weight: 400;
             text-align: center;
-            line-height: 2vw;
             display: inline-flex;
-            justify-content: space-between;
             cursor: pointer;
+            text-decoration: none;
 
             .share-opt-svg {
                 position: relative;
-                top: 0.2vw;
-                width: 1.5vw;
-                height: 1.5vw;
+                top: 0.5vw;
+                width: 1.2vw;
+                height: 1.2vw;
+                margin-left: 1vw;
             }
+        }
+
+        .share-opt:visited {
+            text-decoration: none;
+        }
+
+        .opt-inner {
+            margin-left: 0.5vw;
         }
     }
 
@@ -181,14 +201,15 @@
         }
 
         .browse-pics-btn {
-            width: 9vw;
-            height: 2vw;
-            left: 74vw;
-            top: 37vw;
+            width: 12vw;
+            height: 3vw;
+            left: 70vw;
+            top: 35vw;
             position: absolute;
             background: white;
             text-align: center;
-            line-height: 2vw;
+            line-height: 3vw;
+            margin: auto;
             border-radius: 0.21vw;
             font-family: 'Overpass';
             cursor: pointer;

@@ -1,13 +1,15 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import "../../styles/LandingPage/SearchOrSignup.scss";
-import areYouReady from "../../../images/areYouReady.jpeg";
+import banner1 from "../../../images/banner1.jpeg";
 
 class SearchOrSignup extends Component {
     render() {
         return (
             <div className="search-signup">
 
-                <img src={areYouReady} />
+                <img src={banner1} />
                     
                 <div className="content">
                     Are You Ready To Buy Your Property?
@@ -23,10 +25,9 @@ class SearchOrSignup extends Component {
                 </div>
 
                 <div className="signup-btn">
-                    <div className="btn-inner signup-inner">
-                        Sign Up
-                    </div>
-
+                    <Link className="btn-inner signup-inner" to={{pathname: 'signup/'}}> 
+                        <div >Sign Up</div>
+                    </Link>
                 </div>
 
             </div>

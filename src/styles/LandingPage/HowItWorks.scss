@@ -191,146 +191,177 @@
     top: 5vw;
     position: absolute;
     background: white;
-}
 
-.preview-2-img-div {
-    width: inherit;
-    height: 11.5vw;
-    left: 0vw;
-    top: 0vw;
-    position: absolute;
-}
+    .preview-2-img-div {
+        width: inherit;
+        height: 11.5vw;
+        left: 0vw;
+        top: 0vw;
+        position: absolute;
 
-.preview-2-head {
-    width: 70%;
-    left: 1vw;
-    top: 13vw;
-    position: relative;
-    color: black;
-    font-size: 1vw;
-    font-family: 'Overpass';
-    font-weight: 400;
-    overflow-wrap: break-word;
-}
+        .howItWorks2 {
+            width: 17vw;
+            height: 12vw;
+            left: 0;
+            top: 0;
+            position: absolute;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.55) 0px 0px 13px 4px;
+            border-radius: 10px;
+        }
 
-.fav-svg2 {
-    color: rgb(242, 78, 30);
-    width: 1vw;
-    height: 1vw;
-    left: 13.7vw;
-    top: 10.7vw;
-    position: relative;
-    font-weight: bold;
-}
+        .preview-slider-cont2 {
+            width: 4vw;
+            height: 1.2vw;
+            left: 6.5vw;
+            top: 9.6vw;
+            position: absolute;
+            background: rgb(145, 176, 42);
+            border-radius: 1vw;
+            backdrop-filter: blur(0.5vw);
+        }
 
-.fav-label2 {
-    left: 75%;
-    top: 10.6vw;
-    width: fit-content;
-    position: relative;
-    color: black;
-    font-size: 0.6vw;
-    font-family: Overpass;
-    font-weight: 400;
-    overflow-wrap: break-word;
-}
+        .preview-slider2-dots {
+            width: 0.3vw;
+            height: 0.3vw;
+            top: 10.1vw;
+            position: absolute;
+            background: white;
+            border-radius: 9999px;
+        }
+    }
 
-.prop-det2-div {
-    width: 90%;
-    height: 2vw;
-    left: 1vw;
-    top: 12vw;
-    position: relative;
-}
+    .preview-2-head {
+        width: 70%;
+        left: 1vw;
+        top: 13vw;
+        position: relative;
+        color: black;
+        font-size: 1vw;
+        font-family: 'Overpass';
+        font-weight: 400;
+        overflow-wrap: break-word;
+    }
 
-.bath-svg2 {
-    width: 1vw;
-    height: 1vw;
-    left: 0vw;
-    top: 0vw;
-    position: absolute;
-}
+    .fav-svg2 {
+        color: rgb(242, 78, 30);
+        width: 1vw;
+        height: 1vw;
+        left: 13.7vw;
+        top: 10.7vw;
+        position: relative;
+        font-weight: bold;
+    }
+    
+    .fav-label2 {
+        left: 75%;
+        top: 10.6vw;
+        width: fit-content;
+        position: relative;
+        color: black;
+        font-size: 0.6vw;
+        font-family: Overpass;
+        font-weight: 400;
+        overflow-wrap: break-word;
+    }
+    
+    .prop-det2-div {
+        width: 90%;
+        height: 2vw;
+        left: 1vw;
+        top: 12vw;
+        position: relative;
 
-.bath-det2 {
-    left: 1.5vw;
-    top: 0.2vw;
-    position: absolute;
-    color: black;
-    font-size: 0.6vw;
-    font-family: Roboto;
-    font-weight: 400;
-    overflow-wrap: break-word;
-}
+        .bath-svg2 {
+            width: 1vw;
+            height: 1vw;
+            left: 0vw;
+            top: 0vw;
+            position: absolute;
+        }
+        
+        .bath-det2 {
+            left: 1.5vw;
+            top: 0.2vw;
+            position: absolute;
+            color: black;
+            font-size: 0.6vw;
+            font-family: Roboto;
+            font-weight: 400;
+            overflow-wrap: break-word;
+        }
+        
+        .garg-svg2 {
+            width: 1vw;
+            height: 1vw;
+            left: 5.5vw;
+            top: 0vw;
+            position: absolute;
+        }
+        
+        .garg-det2 {
+            left: 7vw;
+            top: 0.2vw;
+            position: absolute;
+            color: black;
+            font-size: 0.6vw;
+            font-family: Roboto;
+            font-weight: 400;
+            overflow-wrap: break-word;
+        }
+        
+        .area-svg2 {
+            width: 1vw;
+            height: 1vw;
+            left: 10vw;
+            top: 0vw;
+            position: absolute;
+        }
+        
+        .area-det2 {
+            left: 11.5vw;
+            top: 0.2vw;
+            position: absolute;
+            color: black;
+            font-size: 0.6vw;
+            font-family: Roboto;
+            font-weight: 400;
+            overflow-wrap: break-word;
+        }
+    }
 
-.garg-svg2 {
-    width: 1vw;
-    height: 1vw;
-    left: 5.5vw;
-    top: 0vw;
-    position: absolute;
-}
-
-.garg-det2 {
-    left: 7vw;
-    top: 0.2vw;
-    position: absolute;
-    color: black;
-    font-size: 0.6vw;
-    font-family: Roboto;
-    font-weight: 400;
-    overflow-wrap: break-word;
-}
-
-.area-svg2 {
-    width: 1vw;
-    height: 1vw;
-    left: 10vw;
-    top: 0vw;
-    position: absolute;
-}
-
-.area-det2 {
-    left: 11.5vw;
-    top: 0.2vw;
-    position: absolute;
-    color: black;
-    font-size: 0.6vw;
-    font-family: Roboto;
-    font-weight: 400;
-    overflow-wrap: break-word;
-}
-
-.price-det2 {
-    width: 4vw;
-    left: 1vw;
-    top: 13vw;
-    position: relative;
-    color: #127e00;
-    font-size: 1vw;
-    font-family: neueRadial-C-Bold;
-    font-weight: 700;
-    overflow-wrap: break-word;
-}
-
-.view-det2-div {
-    width: 4vw;
-    height: 1.3vw;
-    left: 12vw;
-    top: 11.5vw;
-    position: relative;
-    background: rgb(69, 69, 69);
-    border-radius: 5px;
-}
-
-.view-det2-inner {
-    left: 12.3vw;
-    top: 10.5vw;
-    position: relative;
-    color: white;
-    font-size: 0.6vw;
-    font-family: Roboto;
-    font-weight: 400;
-    overflow-wrap: break-word;
+    .price-det2 {
+        width: 4vw;
+        left: 1vw;
+        top: 13vw;
+        position: relative;
+        color: #127e00;
+        font-size: 1vw;
+        font-family: neueRadial-C-Bold;
+        font-weight: 700;
+        overflow-wrap: break-word;
+    }
+    
+    .view-det2-div {
+        width: 4vw;
+        height: 1.3vw;
+        left: 12vw;
+        top: 11.5vw;
+        position: relative;
+        background: rgb(69, 69, 69);
+        border-radius: 5px;
+    }
+    
+    .view-det2-inner {
+        left: 12.3vw;
+        top: 10.5vw;
+        position: relative;
+        color: white;
+        font-size: 0.6vw;
+        font-family: Roboto;
+        font-weight: 400;
+        overflow-wrap: break-word;
+    }
 }
 
 .preview-1-div {
@@ -354,17 +385,6 @@
     left: 0vw;
     top: 0vw;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.55) 0px 0px 13px 4px;
-    border-radius: 10px;
-}
-
-.howItWorks2 {
-    width: 17vw;
-    height: 12vw;
-    left: 0;
-    top: 0;
-    position: absolute;
-    background: white;
     box-shadow: rgba(0, 0, 0, 0.55) 0px 0px 13px 4px;
     border-radius: 10px;
 }
@@ -524,26 +544,6 @@
     width: 0.5vw;
     height: 0.5vw;
     top: 15.5vw;
-    position: absolute;
-    background: white;
-    border-radius: 9999px;
-}
-
-.preview-slider-cont2 {
-    width: 4vw;
-    height: 1.2vw;
-    left: 6.5vw;
-    top: 9.6vw;
-    position: absolute;
-    background: rgb(145, 176, 42);
-    border-radius: 1vw;
-    backdrop-filter: blur(0.5vw);
-}
-
-.preview-slider2-dots {
-    width: 0.3vw;
-    height: 0.3vw;
-    top: 10.1vw;
     position: absolute;
     background: white;
     border-radius: 9999px;

@@ -5,7 +5,7 @@ import pieChart from "../../../images/pieChart.png";
 class Calculator extends Component {
     render () {
         return (
-            <div className="calculator">
+            <div className="landing-calculator">
                 <div className="calc-head-div">
                     <div className="calc-header"> Property Calculator</div>
                     <div className="head-cont">Our unique process gives you peace of mind from home rent to services.</div>
@@ -120,7 +120,7 @@ class Calculator extends Component {
                         <div className="header-slider-percent">
                             <div className="header">Down payment</div>
 
-                            <div className="slider-div">
+                            <div className="landing-slider-div">
                                 <div className="slider-elm">
                                     <div className="slider"/>
                                     <div className="highlighter"/>
@@ -146,7 +146,7 @@ class Calculator extends Component {
                         <div className="header-slider-percent">
                             <div className="header">Interest Rate</div>
                         
-                            <div className="slider-div">
+                            <div className="landing-slider-div">
                                 <div className="slider-elm">
                                     <div className="slider"/>
                                     <div className="highlighter"/>
@@ -171,7 +171,7 @@ class Calculator extends Component {
                         <div className="header-slider-percent">
                             <div className="header">Property taxes / year</div>
 
-                            <div className="slider-div">
+                            <div className="landing-slider-div">
                                 <div className="slider-elm">
                                     <div className="slider"/>
                                     <div className="highlighter"/>
@@ -196,7 +196,7 @@ class Calculator extends Component {
                         <div className="header-slider-percent">
                             <div className="header">Property Insurance</div>
                             
-                            <div className="slider-div">
+                            <div className="landing-slider-div">
                                 <div className="slider-elm">
                                     <div className="slider"/>
                                     <div className="highlighter"/>
@@ -219,7 +219,7 @@ class Calculator extends Component {
                         <div className="header-slider-percent">
                             <div className="header">Home Owner Dues</div>
                             
-                            <div className="slider-div">
+                            <div className="landing-slider-div">
                                 <div className="slider-elm">
                                     <div className="slider"/>
                                     <div className="pos"/>

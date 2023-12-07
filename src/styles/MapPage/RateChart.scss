@@ -1,0 +1,42 @@
+// RateChart.module.scss
+
+.rateChartContainer {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 2rem 0;
+  
+    h2 {
+      color: #333;
+      font-size: 1.5rem;
+    }
+  
+    .premiumNotice {
+      color: #666;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+  
+    .chartsContainer {
+      display: flex;
+      justify-content: space-between;
+  
+      .chart {
+        width: calc(50% - 0.5rem); // Adjust space between charts
+        height: 300px; // Adjust based on your design
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+        p {
+          // Temporary styling for placeholder
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+      }
+    }
+  }
+  

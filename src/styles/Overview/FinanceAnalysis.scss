@@ -1,0 +1,54 @@
+.finance-analysis {
+    position: relative;
+    top: 45vw;
+    left: 7vw;
+    width: 80vw;
+    height: 36vw;
+    background: white;
+    box-shadow: #0000000f 0px 4px 4px 3px;
+    border: 0.3px solid green;
+
+    .pa-header {
+        left: 5px;
+        top: -4vw;
+        position: absolute;
+        color: black;
+        font-size: 1.5vw;
+        font-family: 'Overpass';
+        font-weight: 400;
+        overflow-wrap: break-word;
+    }
+
+    .fa-inner {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15vw, 1fr));
+        gap: 1vw;
+        padding: 2vw;
+
+        .fa-div {
+            width: 32vw;
+            margin: 1vw;
+            display: inline-flex;
+            justify-content: space-between;
+    
+            .header {
+                font-size: 1.3vw;
+                font-family: 'Overpass';
+            }
+    
+            .value {
+                font-size: 1.3vw;
+                font-family: 'Overpass';
+            }
+
+            .positive {
+                color: green;
+            }
+
+            .negative {
+                color: red;
+            }
+        }
+    }
+    
+}

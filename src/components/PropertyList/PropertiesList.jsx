@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropertyCard from '../PropertyList/PropertyCard.jsx';
 import '../../styles/PropertyList/PropertiesList.scss';
+import { v4 as uuidv4 } from 'uuid';
 
 import { getPropertyList } from "../../Apis/apis.js";
 
@@ -17,13 +18,13 @@ export default function PropertiesList(props) {
           setIsLoading(false);
         });
       }
-    }, [props.properties]);
+    }, [props.properties, location]);
 
     return (
       <div className="properties-list">
         {properties.map((property) => (
           <PropertyCard 
-            key={property.listing_id}
+            key={uuidv4()}
             property_id={property.property_id}
             imageSrc={property.primary_photo?.href || ""}
             description={property.description}
