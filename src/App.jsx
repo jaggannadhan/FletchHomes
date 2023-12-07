@@ -6,7 +6,6 @@ import Overview from "./components/Overview/Overview.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import LoginPage from "./components/Login/LoginPage.jsx";
 import SignUpPage from "./components/SignUp/SignupPage.jsx";
-import MainPage from "./components/MapPage/MainPage.jsx";
 import ContactUs from "./components/ContactUs/ContactUs.jsx";
 
 export default function App() {
@@ -19,7 +18,6 @@ export default function App() {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignUpPage />} />
-                <Route path="/map" element={<MainPage />} />
                 <Route path="/home/overview/:property_id" element={<Overview />} />
                 <Route path="*" element={<LandingPage />} />
             </Routes>

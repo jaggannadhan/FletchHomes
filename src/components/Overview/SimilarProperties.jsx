@@ -22,7 +22,7 @@ export default function SimilarProperties(props) {
 
     return (
         <section className="similar-properties-section">
-            <div className="header">Similar properties nearby</div>
+            <div className="header">Similar properties nearby - AI Generated</div>
             <br/>
 
             <div className="similar-carousel">
