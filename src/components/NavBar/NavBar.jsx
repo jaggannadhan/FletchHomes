@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import "../../styles/NavBar/NavBar.scss";
 import { FaHome, FaUserCircle } from 'react-icons/fa';
+import { MdOutlineLogout } from "react-icons/md";
+import { deleteCookie } from "../../Helper/helper.js";
+
 
 export default function NavBar(props) {
     const { loggedInUser } = {...props};
+    const [ showLogout, setShowLogout ] = useState(false);
+
+    function handleLogout() {
+        deleteCookie("user");
+        location.reload();
+    }
     return (
         <div className="nav-bar">
 
@@ -34,9 +42,13 @@ export default function NavBar(props) {
                 </Link>
             </div>
 
-            <div className="nav-bar-end">
+            <div className="nav-bar-end" onClick={() => setShowLogout(!showLogout)}>
                 <div className="profile-name">{loggedInUser}</div>
                 <FaUserCircle className="profile-avatar"/>
+            </div>
+
+            <div className={showLogout ? "profile-opts" : "close"} onClick={() => handleLogout()}>
+                Logout <MdOutlineLogout/> 
             </div>
             
         </div>

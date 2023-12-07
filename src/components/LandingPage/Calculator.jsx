@@ -236,9 +236,9 @@ class Calculator extends Component {
                     <button className="calc-btns save-btn">
                         Save Report
                     </button>
-                    <button className="calc-btns view-btn">
+                    {/* <button className="calc-btns view-btn">
                         View full report
-                    </button>
+                    </button> */}
                 </div>
             
             </div>

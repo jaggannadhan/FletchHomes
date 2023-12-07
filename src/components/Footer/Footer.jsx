@@ -38,10 +38,10 @@ export default function Footer(props) {
                 <div className="content2">Invest through us, <br/>Enjoy later. </div>
             </div>
 
-            <div className="social-media">
+            {/* <div className="social-media">
                     <FaLinkedin className="svg"/>
                     <RiInstagramFill className="svg"/>
-            </div>
+            </div> */}
 
             <div className="terms-conditns">
                 <div className="elms">@2022 Fletch Homes. All rights reserved</div>

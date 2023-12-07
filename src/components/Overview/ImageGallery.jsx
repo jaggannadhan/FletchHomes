@@ -9,16 +9,17 @@ export default function ImageGallery(props) {
 
     return(
         <div className="img-container">
-            <div class="top">
+            <div style={{cursor: "pointer"}} onClick={() => setShowGallery(false)}>Close Gallery</div>
+            <IoMdClose className="close" onClick={() => setShowGallery(false)} />
+            <div className="top">
                 {
                     photos.map(photo => {
                         return (
-                            <div class="img"><img class="img1" src={getBetterImages(photo?.href)}/></div>
+                            <div className="img"><img className="img1" src={getBetterImages(photo?.href)}/></div>
                         );
                     })
                 }
             </div>
-            <IoMdClose className="close" onClick={() => setShowGallery(false)} />
         </div>
     );
 }

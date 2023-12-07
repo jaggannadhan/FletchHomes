@@ -274,7 +274,14 @@
                 font-family: Overpass;
                 font-weight: 300;
                 overflow-wrap: break-word;
+                height: 6vw;
+                overflow: hidden;
             }   
+        }
+
+        .read-expand {
+            height: 20vw;
+            overflow-y: scroll;
         }
 
         .read-more {
@@ -285,6 +292,8 @@
             overflow-wrap: break-word;
             cursor: pointer;
         }
+
+        
 
         .ppt-det-light {
             width: inherit;

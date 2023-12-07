@@ -21,6 +21,7 @@ export default function Overview(props) {
     const { property_id } = useParams();
     const [ isDetailsLoading, setIsDetailsLoading ] = useState(false);
     const [ details, setDetails ] = useState({});
+    const [ readMore, setReadMore ] = useState(false);
     const [ loggedInUser, setLoggedInUser ] = useState("");
 
     const [ calcDetails, setCalcDetails ] = useState({});
@@ -44,6 +45,7 @@ export default function Overview(props) {
     useEffect(() => {
         const user = getCookie("user");
         if(user) setLoggedInUser(user);
+        else window.location.href = '../';
 
         if(!isDetailsLoading) {
             setIsDetailsLoading(true);
@@ -65,6 +67,11 @@ export default function Overview(props) {
 
         getCaluclatorDetails(property_id);
     }, [property_id]);
+
+    function handleReadMore() {
+
+        setReadMore(false);
+    }
 
     const [ isFavourite, setIsFavourite ] = useState(false);
 
@@ -137,12 +144,18 @@ export default function Overview(props) {
                     <div className="ppt-price">{format_price(list_price)}</div>
                     <div className="ppt-price-type">List Price</div>
                     <br/><br/>
-                    <div className="ppt-det-div">
+                    <div className={!readMore ? "ppt-det-div" : "ppt-det-div read-expand"}>
                         <span className="ppt-addr2">{line}<br/>{city}, {state_code} {postal_code}<br/><br/></span>
                         <span className="ppt-det-dark">{text}</span>
                     </div>
-                    <span className="read-more">Read more.</span>
-                    <div className="ppt-det-light">{text}</div>
+                    {
+                        !readMore ? 
+                        <span className="read-more" onClick={() => setReadMore(true)}>Read more.</span> :
+                        <span className="read-more" onClick={() => handleReadMore()}>Read Less.</span>
+
+                    }
+                    
+                    {/* <div className="ppt-det-light">{text}</div> */}
                     
                     <div className="ppt-status-btn">ACTIVE</div>
                 </div>

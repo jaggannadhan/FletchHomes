@@ -65,13 +65,13 @@ export default function LoginPage() {
     if(!isLoading) {
       setIsLoading(true);
       login(data).then((res) => {
-          if(!res || !(res.success)) {
-            setShowInfoBanner({
-              open: true, message: "Opps! there occurs to be an issue, please try again after sometime!", success: false
-            });
-            setIsLoading(false);
-            return;
-          }
+          // if(!res || !(res.success)) {
+          //   setShowInfoBanner({
+          //     open: true, message: "Opps! there occurs to be an issue, please try again after sometime!", success: false
+          //   });
+          //   setIsLoading(false);
+          //   return;
+          // }
           setCookie("user", data.get("email"), 1);
           window.location.href = '../home';
       });

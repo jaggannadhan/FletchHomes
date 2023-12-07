@@ -311,9 +311,9 @@ export default function Calculator(props) {
                 >
                     Save Report
                 </button>
-                <button className="calc-btns view-btn">
+                {/* <button className="calc-btns view-btn">
                     View full report
-                </button>
+                </button> */}
             </div>
         
         </div>

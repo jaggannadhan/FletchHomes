@@ -59,13 +59,13 @@ export default function SignUpPage() {
     if(!isLoading) {
       setIsLoading(true);
       signUp(data).then((res) => {
-          if(!res || !(res.success)) {
-            setShowInfoBanner({
-              open: true, message: "Opps! there occurs to be an issue, please try again after sometime!", success: false
-            });
-            setIsLoading(false);
-            return;
-          }
+          // if(!res || !(res.success)) {
+          //   setShowInfoBanner({
+          //     open: true, message: "Opps! there occurs to be an issue, please try again after sometime!", success: false
+          //   });
+          //   setIsLoading(false);
+          //   return;
+          // }
           window.location.href = '../login';
       });
     }

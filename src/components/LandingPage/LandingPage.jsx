@@ -7,14 +7,17 @@ import HowItWorks from "./HowItWorks.jsx";
 import AboutUs from "./AboutUs.jsx";
 import FindProperty from "./FindProperty.jsx";
 import NavBar from "./NavBar.jsx";
-
+import { getCookie } from "../../Helper/helper.js";
 import "../../styles/LandingPage/LandingPage.scss";
 
 class LandingPage extends Component{
+
     render() {
+        const user = getCookie("user");
+
         return (
             <div className={"container"}>
-                <NavBar></NavBar>
+                <NavBar loggedInUser={user}></NavBar>
                 <FindProperty></FindProperty>
                 <AboutUs></AboutUs>
                 <HowItWorks></HowItWorks>

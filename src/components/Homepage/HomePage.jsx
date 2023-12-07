@@ -18,6 +18,8 @@ export default function HomePage(props) {
     useEffect(() => {
         const user = getCookie("user");
         if(user) setLoggedInUser(user);
+        else window.location.href = '..';
+        
         if(urlProps?.state?.scrollToFeed) 
             window.scrollBy(0,1000);
 

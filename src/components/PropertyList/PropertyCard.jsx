@@ -18,13 +18,13 @@ const PropertyCard = ({ imageSrc, description, price, address, property_id, simi
         <div className="preview-div">
           <div className="preview-img-div">
               <img src={(imageSrc ? getBetterImages(imageSrc, similarProp) : "") || imageNotAvailable} />
-              <div className="preview-slider-cont"/>
-              <div className="preview-slider-dots" style={{left: "7vw"}} />
+              {/* <div className="preview-slider-cont"/> */}
+              {/* <div className="preview-slider-dots" style={{left: "7vw"}} />
               <div className="preview-slider-dots" style={{left: "7.5vw"}} />
               <div className="preview-slider-dots" style={{left: "8vw"}} />
               <div className="preview-slider-dots" style={{left: "8.5vw"}} />
               <div className="preview-slider-dots" style={{left: "9vw"}} />
-              <div className="preview-slider-dots" style={{left: "9.5vw"}} />
+              <div className="preview-slider-dots" style={{left: "9.5vw"}} /> */}
           </div>
 
           <div className="prop-det-div">

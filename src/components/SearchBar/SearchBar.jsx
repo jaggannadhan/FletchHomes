@@ -10,7 +10,7 @@ export default function SearchBar(props) {
             {/* <input className="placeholder" placeholder="Location, City, Adress, State" /> */}
             <Autocomplete
                 className="placeholder" placeholder="Location, City, Adress, State"
-                apiKey={"AIzaSyDMQAb1deBPeXsj6plOwzkvunW2RwygMdw"}
+                apiKey={"AIzaSyD2iSR4agIM27BeD0q_mvr_zwCi-OpnkFE"}
                 onPlaceSelected={(place) => {
                     const { formatted_address, name } = place;
                     if(formatted_address) {
