@@ -1,4 +1,14 @@
-# FletchHomes - USER INTERFACE DESIGN
+# FletchHomes - USER INTERFACE
+
+## The Problem
+#### Investing in real estate can be complicated and risky, especially for novice investors. Identifying properties with high returns and making informed decisions requires extensive knowledge and analysis of regional and historical data, which can be time-consuming and daunting.
+
+## Our Solution
+ - Engineered a web application to project Return on Investment (ROI) for real estate properties.
+ - Focuses on properties with annual returns greater than 8%.
+ - Utilizes machine learning to analyze regional and historical data.
+ - Simplifies the investment process for both experienced and novice investors.
+ - Provides data-driven insights to facilitate informed investment decisions.
 
 ## To run the project in local environment port::8080
 ### Type the following commands in the termial of the project folder
