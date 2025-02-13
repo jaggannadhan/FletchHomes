@@ -1,6 +1,8 @@
 # FletchHomes - UI
 FlechHomes is a simple UI for a futuristic RealEstate Investment app that focuses on leveraging AI/ML systems to get a better investment choice for our users. The primary goal of FletchHomes is to make investing a hassle-free process for both Experienced and Novice investors.
 
+![Fletch_preview_02](https://github.com/user-attachments/assets/27de5349-d4b7-4d1a-96c5-01c0bf4e6de0)
+
 ## The Problem
 #### Investing in real estate can be complicated and risky, especially for novice investors. Identifying properties with high returns and making informed decisions requires extensive knowledge and analysis of regional and historical data, which can be time-consuming and daunting.
 
